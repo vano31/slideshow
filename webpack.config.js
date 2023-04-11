@@ -16,6 +16,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    overlay: {
+        warnings: true,
+        errors: true
+      }
   },
   optimization: {
     runtimeChunk: 'single',

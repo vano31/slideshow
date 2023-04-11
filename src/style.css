@@ -1,0 +1,63 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.background {
+
+    width: 100%;
+    display: flex;
+
+
+}
+
+.menu.main, .menu.sub {
+
+
+    flex-direction: row;
+    height: 80px;
+
+}
+
+.imageHolder {
+
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+
+}
+
+.conveyerBelt {
+
+    height: 80px;
+
+
+}
+
+.bottomSection {
+
+    flex-direction: column;
+
+}
+
+.timeDisplay {
+
+    height: 150px;
+
+}
+
+.backgroundDisplay {
+
+    height: 150px;
+
+
+}
