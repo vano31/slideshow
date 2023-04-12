@@ -151,21 +151,21 @@ body {
     grid-row: 3 / 4;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 
 
 }
 
-/*
+
 .timeDisplay,
 .backgroundDisplay {
 
     
     height: 120px;
-    width: 50px;
+    width: clamp(100px, 33%, 400px)  /*50px;*/
     
 
 }
-*/
+
 
 }
