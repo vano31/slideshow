@@ -1,3 +1,5 @@
+@media only screen and (max-width: 450px) /*Mobile View*/{
+
 * {
 
     margin: 0;
@@ -32,7 +34,7 @@
 
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 400px;
 
 }
 
@@ -59,5 +61,111 @@
 
     height: 150px;
 
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 451px) /*Desktop View*/{
+
+* {
+
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+/*
+.background {
+
+    display: flex;
+        
+}
+*/
+
+.page {
+
+    height: 100%;
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 8fr;
+    grid-template-rows: 12fr 1fr 3fr;
+}
+
+.menu.main {
+
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    
+}
+
+.menu.sub {
+
+    display: flex;
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    
+}
+
+.imageHolder {
+
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+}
+
+.conveyerBelt {
+
+    grid-column: 3 /4;
+    grid-row: 2 / 3;
+    display: flex;
+
+
+}
+
+.bottomSection {
+
+    display: flex;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+
+}
+
+/*
+.timeDisplay,
+.backgroundDisplay {
+
+    
+    height: 120px;
+    width: 50px;
+    
+
+}
+*/
 
 }
