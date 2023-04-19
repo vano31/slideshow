@@ -64,13 +64,22 @@
 
 }
 
+
 }
 
 
 
 
 
+.backgroundSquare {
 
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    border-style: solid;
+    border-color: black;
+
+}
 
 
 
@@ -115,6 +124,7 @@ body {
 .menu.main {
 
     display: flex;
+    flex-direction: column;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     
@@ -123,6 +133,7 @@ body {
 .menu.sub {
 
     display: flex;
+    flex-direction: column;
     grid-column: 2 / 3;
     grid-row: 1 / 4;
     
