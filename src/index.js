@@ -129,7 +129,7 @@ let getTime = function() {
     let minutes = today.getMinutes();
 
     if (minutes < 10) {
-        minutes = '0' + simpleMinutes;
+        minutes = '0' + minutes;
     }
 
     let time = hours + ':' + minutes;
@@ -222,7 +222,7 @@ imageSquares.forEach(square => {
 
             let imageArrayIndex = parseInt(e.target.id);
             imageArray[imageArrayIndex] = reader.result;
-            imageBox.src = imageArray[imageArrayIndex];
+            //imageBox.src = imageArray[imageArrayIndex];
 
 
 
