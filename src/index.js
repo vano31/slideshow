@@ -22,31 +22,30 @@ blueColorSquare.id = 'blue';
 goldColorSquare.id = 'gold';
 silverColorSquare.id = 'silver';
 
-redColorSquare.textContent = 'red';
+//redColorSquare.textContent = 'red';
 redColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(redColorSquare);
 
-greenColorSquare.textContent = 'green';
+//greenColorSquare.textContent = 'green';
 greenColorSquare.setAttribute('style', 'display: none')
 menuSub.appendChild(greenColorSquare);
 
-blueColorSquare.textContent = 'blue';
+//blueColorSquare.textContent = 'blue';
 blueColorSquare.setAttribute('style', 'display: none')
 menuSub.appendChild(blueColorSquare);
 
-goldColorSquare.textContent = 'gold';
+//goldColorSquare.textContent = 'gold';
 goldColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(goldColorSquare);
 
-silverColorSquare.textContent = 'silver';
+//silverColorSquare.textContent = 'silver';
 silverColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(silverColorSquare);
 
 let backgroundSquares = document.querySelectorAll('.backgroundSquare');
-//console.log(backgroundSquares);
 
-//let backgroundSquares = document.querySelectorAll('.backgroundSquare');
-//let gook = document.querySelectorAll('#red');
+
+
 
 let imageSquare0 = document.createElement('input');
 imageSquare0.type = 'file';
@@ -96,6 +95,7 @@ let backgroundSave = function() {
     let backgroundColorJSON = JSON.stringify(backgroundColorToSave);
     localStorage.setItem('backgroundColor', backgroundColorJSON);
 
+
 }
 
 let backgroundLoad = function() {
@@ -122,6 +122,8 @@ let backgroundLoadToDOM = function() {
 
 
 }
+
+
 
 ////////////////////////////////////Global Functions to Run at Page Load
 
@@ -180,6 +182,8 @@ backgroundSquares.forEach(square => {
     square.addEventListener('click', function(e) {
         //console.log(e.target.id);
         page.style.backgroundColor = e.target.id;
+
+        backgroundDisplay.textContent = e.target.id
 
         backgroundSave();
     })
