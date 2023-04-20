@@ -123,6 +123,23 @@ let backgroundLoadToDOM = function() {
 
 }
 
+let getTime = function() {
+    let today = new Date();
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+
+    if (minutes < 10) {
+        minutes = '0' + simpleMinutes;
+    }
+
+    let time = hours + ':' + minutes;
+    timeDisplay.textContent = time;
+}
+
+///////////////////////////////////Set Interval Functions
+
+let timeDisplayTimer = setInterval(getTime, 6000);
+
 
 
 ////////////////////////////////////Global Functions to Run at Page Load
@@ -134,6 +151,9 @@ if (localStorage.getItem('backgroundColor')) {
     backgroundLoadToDOM();
 
 }
+
+getTime(); //For getting the time on page load without waiting for timer
+
 
 
 ////////////////////////////////////// Important Event Listeners
