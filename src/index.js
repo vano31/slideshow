@@ -1,7 +1,7 @@
 import './style.css';
 import {mainpage} from './structure.js'
 
-let {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor} = mainpage();
+let {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor, conveyerButton0, conveyerButton1, conveyerButton2, conveyerButton3, conveyerButton4, conveyerButtonLeft, conveyerButtonRight} = mainpage();
 
 
 let redColorSquare = document.createElement('div');

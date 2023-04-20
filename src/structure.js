@@ -124,7 +124,7 @@ conveyerBelt.appendChild(conveyerButtonRight)
 
 ////////////////////////////////////////////////////////////////
 
-return {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, bottomSection, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor}
+return {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, bottomSection, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor, conveyerButton0, conveyerButton1, conveyerButton2, conveyerButton3, conveyerButton4, conveyerButtonLeft, conveyerButtonRight}
 
 }
 
