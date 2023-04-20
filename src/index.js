@@ -63,6 +63,13 @@ dropDownColor.addEventListener('click', () => {
 
 })
 
+backgroundSquares.forEach(square => {
+    square.addEventListener('click', function(e) {
+        //console.log(e.target.id);
+        page.style.backgroundColor = e.target.id;
+    })
+})
+
 
 
 

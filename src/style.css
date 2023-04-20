@@ -71,19 +71,6 @@
 
 
 
-.backgroundSquare {
-
-    width: 60px;
-    height: 60px;
-    background-color: orange;
-    border-style: solid;
-    border-color: black;
-
-}
-
-
-
-
 
 
 @media only screen and (min-width: 451px) /*Desktop View*/{
@@ -179,4 +166,37 @@ body {
 }
 
 
+}
+
+/*For both Mobile and Desktop View*/
+
+.backgroundSquare {
+
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    border-style: solid;
+    border-color: black;
+
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+
+}
+
+#green {
+    background-color: green;
+}
+
+#gold {
+    background-color: gold;
+}
+
+#silver {
+    background-color: silver;
 }
