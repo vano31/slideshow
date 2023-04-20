@@ -78,7 +78,7 @@ bottomSection.appendChild(backgroundDisplay);
 
 let imageBox = document.createElement('img');
 imageBox.id = 'imageBox';
-imageBox.src = '../src/images/samusdread.jpg'
+//imageBox.src = '../src/images/samusdread.jpg'
 imageHolder.appendChild(imageBox);
 
 

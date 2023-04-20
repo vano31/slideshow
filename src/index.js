@@ -45,7 +45,7 @@ menuSub.appendChild(silverColorSquare);
 let backgroundSquares = document.querySelectorAll('.backgroundSquare');
 
 
-
+//////////////////////////////////////////
 
 let imageSquare0 = document.createElement('input');
 imageSquare0.type = 'file';
@@ -155,6 +155,10 @@ if (localStorage.getItem('backgroundColor')) {
 getTime(); //For getting the time on page load without waiting for timer
 
 
+//////////////////////////////Global Variables
+
+let imageArray = [];
+
 
 ////////////////////////////////////// Important Event Listeners
 
@@ -206,5 +210,22 @@ backgroundSquares.forEach(square => {
         backgroundDisplay.textContent = e.target.id
 
         backgroundSave();
+    })
+})
+
+imageSquares.forEach(square => {
+    square.addEventListener('change', function(e) {
+        let reader = new FileReader();
+        reader.readAsDataURL(square.files[0]);
+
+        reader.addEventListener('load', () => {
+
+            let imageArrayIndex = parseInt(e.target.id);
+            imageArray[imageArrayIndex] = reader.result;
+            imageBox.src = imageArray[imageArrayIndex];
+
+
+
+        })
     })
 })
