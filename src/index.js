@@ -23,23 +23,23 @@ goldColorSquare.id = 'gold';
 silverColorSquare.id = 'silver';
 
 redColorSquare.textContent = 'red';
-redColorSquare.setAttribute('style', 'visibility: hidden');
+redColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(redColorSquare);
 
 greenColorSquare.textContent = 'green';
-greenColorSquare.setAttribute('style', 'visibility: hidden')
+greenColorSquare.setAttribute('style', 'display: none')
 menuSub.appendChild(greenColorSquare);
 
 blueColorSquare.textContent = 'blue';
-blueColorSquare.setAttribute('style', 'visibility: hidden')
+blueColorSquare.setAttribute('style', 'display: none')
 menuSub.appendChild(blueColorSquare);
 
 goldColorSquare.textContent = 'gold';
-goldColorSquare.setAttribute('style', 'visibility: hidden');
+goldColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(goldColorSquare);
 
 silverColorSquare.textContent = 'silver';
-silverColorSquare.setAttribute('style', 'visibility: hidden');
+silverColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(silverColorSquare);
 
 let backgroundSquares = document.querySelectorAll('.backgroundSquare');
@@ -51,12 +51,12 @@ console.log(backgroundSquares);
 dropDownColor.addEventListener('click', () => {
 
     backgroundSquares.forEach(square => {
-        if (square.style.visibility === 'hidden') {
+        if (square.style.display === 'none') {
 
-            square.style.visibility = 'visible';
+            square.style.display = 'block';
 
         }   else {
-            square.style.visibility = 'hidden';
+            square.style.display = 'none';
         }
     })
 
