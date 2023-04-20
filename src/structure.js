@@ -32,23 +32,6 @@ let colorbox = document.createElement('button');
 
 
 
-/////////////////////////////////////////////////
-
-dropDownColor.addEventListener('click', () => {
-
-    
-
-
-
-
-})
-
-dropDownImage.addEventListener('click', () => {
-
-
-
-})
-
 ///////////////////////////////////////////////////
 
 let menuSub = document.createElement('div');
@@ -92,7 +75,19 @@ bottomSection.appendChild(backgroundDisplay);
 
 ///////////////////////////////////////////////////////////////
 
-return {page, menuMain, menuSub, imageHolder, conveyerBelt, bottomSection, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor}
+
+let imageBox = document.createElement('img');
+imageBox.id = 'imageBox';
+imageHolder.appendChild(imageBox);
+
+////////////////////////////////////////////////////////////////
+
+
+//Conveyer belt stuff
+
+////////////////////////////////////////////////////////////////
+
+return {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, bottomSection, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor}
 
 }
 

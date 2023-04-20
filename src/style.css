@@ -200,3 +200,9 @@ body {
 #silver {
     background-color: silver;
 }
+
+#imageBox {
+
+    height: 100%;
+    width: 100%;
+}
