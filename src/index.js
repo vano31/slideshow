@@ -48,29 +48,6 @@ console.log(backgroundSquares);
 //let backgroundSquares = document.querySelectorAll('.backgroundSquare');
 //let gook = document.querySelectorAll('#red');
 
-dropDownColor.addEventListener('click', () => {
-
-    backgroundSquares.forEach(square => {
-        if (square.style.display === 'none') {
-
-            square.style.display = 'block';
-
-        }   else {
-            square.style.display = 'none';
-        }
-    })
-
-
-})
-
-backgroundSquares.forEach(square => {
-    square.addEventListener('click', function(e) {
-        //console.log(e.target.id);
-        page.style.backgroundColor = e.target.id;
-    })
-})
-
-
 let imageSquare0 = document.createElement('input');
 imageSquare0.type = 'file';
 imageSquare0.id = '0';
@@ -109,17 +86,51 @@ imageSquare4.classList.add('imageSquare');
 
 let imageSquares = document.querySelectorAll('.imageSquare');
 
-console.log(imageSquares);
+//console.log(imageSquares);
+
+//////////////////////////////////////////////////////////////////
+
+dropDownColor.addEventListener('click', () => {
+    backgroundSquares.forEach(square => {
+        if (square.style.display === 'none') {
+
+            square.style.display = 'block';
+
+            imageSquares.forEach(otherSquare => {
+                otherSquare.style.display = 'none';
+            })
+
+        }   else {
+            square.style.display = 'none';
+            
+        }
+    })
+
+})
+
 
 
 dropDownImage.addEventListener('click', () => {
     imageSquares.forEach(square => {
         if (square.style.display === 'none') {
+
             square.style.display = 'block';
+
+            backgroundSquares.forEach(otherSquare => {
+                otherSquare.style.display = 'none';
+            })
+
         }   else {
             square.style.display = 'none';
         }
     })
 })
 
+/////////////////////////////////////////////////////////////////////////////////////
 
+backgroundSquares.forEach(square => {
+    square.addEventListener('click', function(e) {
+        //console.log(e.target.id);
+        page.style.backgroundColor = e.target.id;
+    })
+})
