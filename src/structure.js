@@ -78,12 +78,49 @@ bottomSection.appendChild(backgroundDisplay);
 
 let imageBox = document.createElement('img');
 imageBox.id = 'imageBox';
+imageBox.src = '../src/images/samusdread.jpg'
 imageHolder.appendChild(imageBox);
+
 
 ////////////////////////////////////////////////////////////////
 
 
 //Conveyer belt stuff
+
+let conveyerButtonLeft = document.createElement('button');
+conveyerButtonLeft.id = 'leftButton';
+conveyerButtonLeft.textContent = 'Left Button';
+conveyerBelt.appendChild(conveyerButtonLeft);
+
+let conveyerButton0 = document.createElement('button');
+conveyerButton0.name = '0';
+conveyerButton0.textContent = 'O';
+conveyerBelt.appendChild(conveyerButton0);
+
+let conveyerButton1 = document.createElement('button');
+conveyerButton1.name = '1';
+conveyerButton1.textContent = 'O';
+conveyerBelt.appendChild(conveyerButton1);
+
+let conveyerButton2 = document.createElement('button');
+conveyerButton2.name = '2';
+conveyerButton2.textContent = 'O';
+conveyerBelt.appendChild(conveyerButton2);
+
+let conveyerButton3 = document.createElement('button');
+conveyerButton3.name = '3';
+conveyerButton3.textContent = 'O';
+conveyerBelt.appendChild(conveyerButton3);
+
+let conveyerButton4 = document.createElement('button');
+conveyerButton4.name = '4';
+conveyerButton4.textContent = 'O';
+conveyerBelt.appendChild(conveyerButton4);
+
+let conveyerButtonRight = document.createElement('button');
+conveyerButtonRight.id = 'rightButton';
+conveyerButtonRight.textContent = 'Right Button';
+conveyerBelt.appendChild(conveyerButtonRight)
 
 ////////////////////////////////////////////////////////////////
 
