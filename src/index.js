@@ -3,6 +3,15 @@ import {mainpage} from './structure.js'
 
 let {page, menuMain, menuSub, imageHolder, imageBox, conveyerBelt, timeDisplay, backgroundDisplay, dropDownImage, dropDownColor, conveyerButton0, conveyerButton1, conveyerButton2, conveyerButton3, conveyerButton4, conveyerButtonLeft, conveyerButtonRight} = mainpage();
 
+//////////////////////////////Global Variables
+
+let imageArray = [];
+
+let countNumber = 0;
+
+
+
+///////////////////////////////////////////////
 
 let redColorSquare = document.createElement('div');
 let greenColorSquare = document.createElement('div');
@@ -136,9 +145,43 @@ let getTime = function() {
     timeDisplay.textContent = time;
 }
 
+
+let imageDOMLoader = function() {
+
+
+    console.log(countNumber);
+
+        if (imageArray[countNumber] && countNumber <= 4) {
+
+            imageBox.src = `${imageArray[countNumber]}`;
+            countNumber++;
+    
+        }   else if (countNumber > 4) {
+    
+            countNumber = 0;
+            imageBox.src = `${imageArray[countNumber]}`;
+            //countNumber++;
+            
+        }   else {
+    
+            console.log('no picture');
+            //console.log(countNumber);
+            countNumber++;
+    
+    
+        }
+
+    
+
+}
+
+
+
 ///////////////////////////////////Set Interval Functions
 
 let timeDisplayTimer = setInterval(getTime, 6000);
+
+let setInternalId = setInterval(imageDOMLoader, 2000);
 
 
 
@@ -154,10 +197,6 @@ if (localStorage.getItem('backgroundColor')) {
 
 getTime(); //For getting the time on page load without waiting for timer
 
-
-//////////////////////////////Global Variables
-
-let imageArray = [];
 
 
 ////////////////////////////////////// Important Event Listeners
@@ -223,7 +262,7 @@ imageSquares.forEach(square => {
             let imageArrayIndex = parseInt(e.target.id);
             imageArray[imageArrayIndex] = reader.result;
             //imageBox.src = imageArray[imageArrayIndex];
-
+            console.log(imageArray);
 
 
         })
