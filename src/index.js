@@ -147,31 +147,33 @@ let getTime = function() {
 
 
 let imageDOMLoader = function() {
+   
+
+    if (/*imageArray[countNumber] && */countNumber < 4) {
+
+        console.log(countNumber);
+
+        imageBox.src = `${imageArray[countNumber]}`;
+        countNumber++;
+
+    }   else if (countNumber === 4) {
+
+        console.log(countNumber);
+
+        countNumber = 0;
+        imageBox.src = `${imageArray[countNumber]}`;
+        //countNumber++;
+        
+    }   /*else {
+
+        console.log('no picture');
+        //console.log(countNumber);
+        countNumber++;
 
 
-    console.log(countNumber);
+    }
+    */
 
-        if (imageArray[countNumber] && countNumber <= 4) {
-
-            imageBox.src = `${imageArray[countNumber]}`;
-            countNumber++;
-    
-        }   else if (countNumber > 4) {
-    
-            countNumber = 0;
-            imageBox.src = `${imageArray[countNumber]}`;
-            //countNumber++;
-            
-        }   else {
-    
-            console.log('no picture');
-            //console.log(countNumber);
-            countNumber++;
-    
-    
-        }
-
-    
 
 }
 
