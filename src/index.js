@@ -43,7 +43,7 @@ silverColorSquare.setAttribute('style', 'display: none');
 menuSub.appendChild(silverColorSquare);
 
 let backgroundSquares = document.querySelectorAll('.backgroundSquare');
-console.log(backgroundSquares);
+//console.log(backgroundSquares);
 
 //let backgroundSquares = document.querySelectorAll('.backgroundSquare');
 //let gook = document.querySelectorAll('#red');
@@ -86,9 +86,55 @@ imageSquare4.classList.add('imageSquare');
 
 let imageSquares = document.querySelectorAll('.imageSquare');
 
-//console.log(imageSquares);
 
-//////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////Important Function Declarations
+
+let backgroundSave = function() {
+    
+    let backgroundColorToSave = window.getComputedStyle(page).backgroundColor;
+    let backgroundColorJSON = JSON.stringify(backgroundColorToSave);
+    localStorage.setItem('backgroundColor', backgroundColorJSON);
+
+}
+
+let backgroundLoad = function() {
+
+    if (!localStorage.getItem('backgroundColor')) {
+        
+        return
+
+    }   else {
+
+        let oldColorJSON = localStorage.getItem('backgroundColor');
+        let oldColorParsed = JSON.parse(oldColorJSON);
+        return {oldColorParsed};
+
+    }
+
+}
+
+let backgroundLoadToDOM = function() {
+
+
+    let {oldColorParsed} = backgroundLoad();
+    page.style.backgroundColor = oldColorParsed;
+
+
+}
+
+////////////////////////////////////Global Functions to Run at Page Load
+
+backgroundLoad();
+
+if (localStorage.getItem('backgroundColor')) {
+
+    backgroundLoadToDOM();
+
+}
+
+
+////////////////////////////////////// Important Event Listeners
 
 dropDownColor.addEventListener('click', () => {
     backgroundSquares.forEach(square => {
@@ -105,9 +151,11 @@ dropDownColor.addEventListener('click', () => {
             
         }
     })
+    
+
+    //console.log(page.style.backgroundColor);
 
 })
-
 
 
 dropDownImage.addEventListener('click', () => {
@@ -132,5 +180,7 @@ backgroundSquares.forEach(square => {
     square.addEventListener('click', function(e) {
         //console.log(e.target.id);
         page.style.backgroundColor = e.target.id;
+
+        backgroundSave();
     })
 })
