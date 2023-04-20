@@ -71,8 +71,55 @@ backgroundSquares.forEach(square => {
 })
 
 
+let imageSquare0 = document.createElement('input');
+imageSquare0.type = 'file';
+imageSquare0.id = '0';
+menuSub.appendChild(imageSquare0);
+imageSquare0.style.display = 'none';
+
+let imageSquare1 = document.createElement('input');
+imageSquare1.type = 'file';
+imageSquare1.id = '1';
+menuSub.appendChild(imageSquare1);
+imageSquare1.style.display = 'none';
+
+let imageSquare2 = document.createElement('input');
+imageSquare2.type = 'file';
+imageSquare2.id = '2';
+menuSub.appendChild(imageSquare2);
+imageSquare2.style.display = 'none';
+
+let imageSquare3 = document.createElement('input');
+imageSquare3.type = 'file';
+imageSquare3.id = '3';
+menuSub.appendChild(imageSquare3);
+imageSquare3.style.display = 'none';
+
+let imageSquare4 = document.createElement('input');
+imageSquare4.type = 'file';
+imageSquare4.id = '4';
+menuSub.appendChild(imageSquare4);
+imageSquare4.style.display = 'none';
+
+imageSquare0.classList.add('imageSquare');
+imageSquare1.classList.add('imageSquare');
+imageSquare2.classList.add('imageSquare');
+imageSquare3.classList.add('imageSquare');
+imageSquare4.classList.add('imageSquare');
+
+let imageSquares = document.querySelectorAll('.imageSquare');
+
+console.log(imageSquares);
 
 
-
+dropDownImage.addEventListener('click', () => {
+    imageSquares.forEach(square => {
+        if (square.style.display === 'none') {
+            square.style.display = 'block';
+        }   else {
+            square.style.display = 'none';
+        }
+    })
+})
 
 
