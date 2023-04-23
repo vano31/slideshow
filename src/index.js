@@ -176,6 +176,32 @@ let imageDOMLoader = function() {
 
 }
 
+let imageStorageSaver = function() {
+
+    let imageArrayJSON = JSON.stringify(imageArray);
+    localStorage.setItem('imageArray', imageArrayJSON);
+
+}
+
+/* imageURLRetriever Will be run at beginning of page to all imageArray to be equal to localStorage on page load/refresh*/ 
+let imageURLRetriever = function() { 
+
+
+    if (localStorage.getItem('imageArray')) {
+
+        let oldImageArrayJSON = localStorage.getItem('imageArray');
+        let parsedOldImageArray = JSON.parse(oldImageArrayJSON);
+        imageArray = parsedOldImageArray;
+
+
+    }   else {
+
+        return
+    }
+    
+
+}
+
 
 
 ///////////////////////////////////Set Interval Functions
@@ -197,6 +223,8 @@ if (localStorage.getItem('backgroundColor')) {
 }
 
 getTime(); //For getting the time on page load without waiting for timer
+
+imageURLRetriever(); //For getting the url from localStorage on page load
 
 
 
@@ -263,6 +291,7 @@ imageSquares.forEach(square => {
             let imageArrayIndex = parseInt(e.target.id);
             imageArray[imageArrayIndex] = reader.result;
             //imageBox.src = imageArray[imageArrayIndex];
+            imageStorageSaver();
             console.log(imageArray);
 
 
