@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 @media only screen and (max-width: 450px) /*Mobile View*/{
 
 * {
@@ -41,6 +43,7 @@
 .conveyerBelt {
 
     height: 80px;
+    
 
 
 }
@@ -61,6 +64,20 @@
 
     height: 150px;
 
+
+}
+
+.timeDisplay {
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.backgroundDisplay {
+
+    justify-content: center;
+    align-items: start;
 
 }
 
@@ -90,13 +107,7 @@ body {
     width: 100vw;
 }
 
-/*
-.background {
 
-    display: flex;
-        
-}
-*/
 
 .page {
 
@@ -165,10 +176,24 @@ body {
 
 }
 
+.timeDisplay, .backgroundDisplay {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 }
 
 /*For both Mobile and Desktop View*/
+
+* {
+
+    font-family: 'Montserrat', sans-serif;
+
+}
 
 .backgroundSquare {
 
@@ -205,4 +230,8 @@ body {
 
     height: 100%;
     width: 100%;
+}
+
+.conveyerBelt {
+    justify-content: space-evenly;
 }
