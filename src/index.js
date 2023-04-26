@@ -147,31 +147,57 @@ let getTime = function() {
 
 
 let imageDOMLoader = function() {
-   
 
-    if (/*imageArray[countNumber] && */countNumber < 4) {
-
-        console.log(countNumber);
-        imageBox.src = `${imageArray[countNumber]}`;
-        countNumber++;
-
-    }   else if (countNumber === 4) {
+    if (!(imageArray[countNumber])) {
 
         console.log(countNumber);
-        imageBox.src = `${imageArray[countNumber]}`;
-        countNumber = 0;
-        
-        //countNumber++;
-        
-    }   /*else {
+        imageBox.src = '../src/images/emptyimage.jpg';
 
-        console.log('no picture');
-        //console.log(countNumber);
-        countNumber++;
+        if (countNumber < 4) {
+
+            countNumber++
+
+        }   else {
+
+            countNumber = 0;
+        }
+
+
+    }   else {
+
+        if (/*imageArray[countNumber] && */countNumber < 4) {
+
+            console.log(countNumber);
+            imageBox.src = `${imageArray[countNumber]}`;
+            countNumber++;
+    
+        }   else if (countNumber === 4) {
+    
+            console.log(countNumber);
+            imageBox.src = `${imageArray[countNumber]}`;
+            countNumber = 0;
+            
+            //countNumber++;
+            
+        }   /*else {
+    
+            console.log('no picture');
+            //console.log(countNumber);
+            countNumber++;
+    
+    
+        }
+        */
+
+
+
+
 
 
     }
-    */
+   
+
+    
 
 
 }
@@ -202,13 +228,17 @@ let imageURLRetriever = function() {
 
 }
 
+let countTimerResetter = function() {
+    clearInterval(setInternalId)
+    setInternalId = setInterval(imageDOMLoader, 2000);
+  }
 
 
 ///////////////////////////////////Set Interval Functions
 
 let timeDisplayTimer = setInterval(getTime, 6000);
 
-let setInternalId = setInterval(imageDOMLoader, 2000);
+let setInternalId = setInterval(imageDOMLoader, 3000);
 
 
 
@@ -298,3 +328,57 @@ imageSquares.forEach(square => {
         })
     })
 })
+
+
+//Conveyer Belt Button Event Listeners/////////////////////////////////////////////
+
+conveyerButtonLeft.addEventListener('click', () => {
+  
+    //Add if else statement to make sure it does not go below 0
+    
+    if (countNumber === 0) {
+      countNumber = 4; //Going left from 0 takes you to the end
+    } else {
+      countNumber--; // Reduce countNumber by 1
+    }
+    
+     
+    imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
+    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    countTimerResetter(); //
+    
+  })
+  
+  conveyerButtonRight.addEventListener('click', () => {
+    
+    //Add if else statement to make sure it does not go above 4
+    
+    if (countNumber === 4) {
+      countNumber = 0; //Going right from 4 takes you to the beginning
+    } else {
+      countNumber++; //Increase countNumber by 1
+    }
+    
+    
+    
+    countNumber++; //Increase countNumber by 1
+    imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
+    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    countTimerResetter(); //
+    
+  })
+  
+  let numberedConveyerButtons = [conveyerButton0, conveyerButton1, conveyerButton2, conveyerButton3, conveyerButton4];
+  
+  numberedConveyerButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      countNumber = e.target.name; //Change countNumber to the name of the selected button
+      imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
+    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    countTimerResetter(); //
+    })
+  })
+  
+  
+  
+  
