@@ -157,7 +157,7 @@ let imageDOMLoader = function() {
 
             countNumber++
 
-        }   else {
+        }   else if (countNumber >= 4) {
 
             countNumber = 0;
         }
@@ -171,7 +171,7 @@ let imageDOMLoader = function() {
             imageBox.src = `${imageArray[countNumber]}`;
             countNumber++;
     
-        }   else if (countNumber === 4) {
+        }   else if (countNumber >= 4) {
     
             console.log(countNumber);
             imageBox.src = `${imageArray[countNumber]}`;
@@ -352,18 +352,20 @@ conveyerButtonLeft.addEventListener('click', () => {
   conveyerButtonRight.addEventListener('click', () => {
     
     //Add if else statement to make sure it does not go above 4
+
+    /*
     
     if (countNumber === 4) {
       countNumber = 0; //Going right from 4 takes you to the beginning
     } else {
       countNumber++; //Increase countNumber by 1
     }
+    */
     
-    
-    
-    countNumber++; //Increase countNumber by 1
+    //countNumber++; //Increase countNumber by 1
+    //console.log(countNumber);
     imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
-    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    //countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
     countTimerResetter(); //
     
   })
@@ -374,7 +376,7 @@ conveyerButtonLeft.addEventListener('click', () => {
     button.addEventListener('click', function(e) {
       countNumber = e.target.name; //Change countNumber to the name of the selected button
       imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
-    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    //countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
     countTimerResetter(); //
     })
   })
