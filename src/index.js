@@ -334,38 +334,35 @@ imageSquares.forEach(square => {
 
 conveyerButtonLeft.addEventListener('click', () => {
   
-    //Add if else statement to make sure it does not go below 0
-    
-    if (countNumber === 0) {
-      countNumber = 4; //Going left from 0 takes you to the end
-    } else {
-      countNumber--; // Reduce countNumber by 1
+
+    if (countNumber === 1) {
+
+        countNumber = 4;
+
+    }   else if (countNumber === 0) {
+
+        countNumber = 3;
+
+
+    }   else    {
+
+        countNumber--;
+        countNumber--;
+
     }
     
      
     imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
-    countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
-    countTimerResetter(); //
+    
+    countTimerResetter(); 
     
   })
   
   conveyerButtonRight.addEventListener('click', () => {
     
-    //Add if else statement to make sure it does not go above 4
-
-    /*
-    
-    if (countNumber === 4) {
-      countNumber = 0; //Going right from 4 takes you to the beginning
-    } else {
-      countNumber++; //Increase countNumber by 1
-    }
-    */
-    
-    //countNumber++; //Increase countNumber by 1
-    //console.log(countNumber);
+   
     imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
-    //countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+   
     countTimerResetter(); //
     
   })
@@ -376,7 +373,7 @@ conveyerButtonLeft.addEventListener('click', () => {
     button.addEventListener('click', function(e) {
       countNumber = e.target.name; //Change countNumber to the name of the selected button
       imageDOMLoader(); //Do one round of imageDOMLoader to load the image immediately
-    //countNumber++; // Increase countNumber by 1 since the setInterval function within countTimerResetter takes some time BEFORE a new image is shown;
+    
     countTimerResetter(); //
     })
   })
