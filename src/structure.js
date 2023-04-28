@@ -89,37 +89,37 @@ imageHolder.appendChild(imageBox);
 
 let conveyerButtonLeft = document.createElement('button');
 conveyerButtonLeft.id = 'leftButton';
-conveyerButtonLeft.textContent = 'Left Button';
+conveyerButtonLeft.textContent = 'Back';
 conveyerBelt.appendChild(conveyerButtonLeft);
 
 let conveyerButton0 = document.createElement('button');
 conveyerButton0.name = '0';
-conveyerButton0.textContent = 'O';
+conveyerButton0.textContent = 'Pic 1';
 conveyerBelt.appendChild(conveyerButton0);
 
 let conveyerButton1 = document.createElement('button');
 conveyerButton1.name = '1';
-conveyerButton1.textContent = 'O';
+conveyerButton1.textContent = 'Pic 2';
 conveyerBelt.appendChild(conveyerButton1);
 
 let conveyerButton2 = document.createElement('button');
 conveyerButton2.name = '2';
-conveyerButton2.textContent = 'O';
+conveyerButton2.textContent = 'Pic 3';
 conveyerBelt.appendChild(conveyerButton2);
 
 let conveyerButton3 = document.createElement('button');
 conveyerButton3.name = '3';
-conveyerButton3.textContent = 'O';
+conveyerButton3.textContent = 'Pic 4';
 conveyerBelt.appendChild(conveyerButton3);
 
 let conveyerButton4 = document.createElement('button');
 conveyerButton4.name = '4';
-conveyerButton4.textContent = 'O';
+conveyerButton4.textContent = 'Pic 5';
 conveyerBelt.appendChild(conveyerButton4);
 
 let conveyerButtonRight = document.createElement('button');
 conveyerButtonRight.id = 'rightButton';
-conveyerButtonRight.textContent = 'Right Button';
+conveyerButtonRight.textContent = 'Forward';
 conveyerBelt.appendChild(conveyerButtonRight)
 
 ////////////////////////////////////////////////////////////////

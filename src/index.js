@@ -61,30 +61,36 @@ imageSquare0.type = 'file';
 imageSquare0.id = '0';
 menuSub.appendChild(imageSquare0);
 imageSquare0.style.display = 'none';
+imageSquare0.textContent = "Pic 1";
+
 
 let imageSquare1 = document.createElement('input');
 imageSquare1.type = 'file';
 imageSquare1.id = '1';
 menuSub.appendChild(imageSquare1);
 imageSquare1.style.display = 'none';
+imageSquare1.textContent = "Pic 2"
 
 let imageSquare2 = document.createElement('input');
 imageSquare2.type = 'file';
 imageSquare2.id = '2';
 menuSub.appendChild(imageSquare2);
 imageSquare2.style.display = 'none';
+imageSquare2.textContent = "Pic 3"
 
 let imageSquare3 = document.createElement('input');
 imageSquare3.type = 'file';
 imageSquare3.id = '3';
 menuSub.appendChild(imageSquare3);
 imageSquare3.style.display = 'none';
+imageSquare3.textContent = "Pic 4"
 
 let imageSquare4 = document.createElement('input');
 imageSquare4.type = 'file';
 imageSquare4.id = '4';
 menuSub.appendChild(imageSquare4);
 imageSquare4.style.display = 'none';
+imageSquare4.textContent = "Pic 5"
 
 imageSquare0.classList.add('imageSquare');
 imageSquare1.classList.add('imageSquare');
@@ -94,6 +100,11 @@ imageSquare4.classList.add('imageSquare');
 
 let imageSquares = document.querySelectorAll('.imageSquare');
 
+/*
+imageSquares.forEach(square => {
+    square.setAttribute('color', transparent);
+})
+*/
 
 
 /////////////////////////////////////Important Function Declarations
