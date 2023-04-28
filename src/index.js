@@ -132,6 +132,37 @@ let backgroundLoadToDOM = function() {
 
 }
 
+let backgroundTextSave = function() {
+
+    let backgroundTextToSave = backgroundDisplay.textContent;
+    let backgroundTextJSON = JSON.stringify(backgroundTextToSave);
+    localStorage.setItem('backgroundColorDisplayText', backgroundTextJSON)
+
+}
+
+let backgroundTextLoad = function() {
+
+    if (!localStorage.getItem('backgroundColorDisplayText')) {
+
+        return
+    }   else {
+
+        let oldColorTextJSON = localStorage.getItem('backgroundColorDisplayText')
+        let oldColorTextParsed = JSON.parse(oldColorTextJSON);
+        return {oldColorTextParsed}
+    }
+
+
+}
+
+let backgroundLoadTextToDOM = function() {
+
+    let {oldColorTextParsed} = backgroundTextLoad();
+    backgroundDisplay.textContent = oldColorTextParsed;
+
+
+}
+
 let getTime = function() {
     let today = new Date();
     let hours = today.getHours();
@@ -246,11 +277,21 @@ let setInternalId = setInterval(imageDOMLoader, 3000);
 
 backgroundLoad();
 
+backgroundTextLoad();
+
 if (localStorage.getItem('backgroundColor')) {
 
     backgroundLoadToDOM();
 
 }
+
+if (localStorage.getItem('backgroundColorDisplayText')) {
+
+    backgroundLoadTextToDOM();
+
+}
+
+
 
 getTime(); //For getting the time on page load without waiting for timer
 
@@ -308,6 +349,7 @@ backgroundSquares.forEach(square => {
         backgroundDisplay.textContent = e.target.id
 
         backgroundSave();
+        backgroundTextSave();
     })
 })
 
